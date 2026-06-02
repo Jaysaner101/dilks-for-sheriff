@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Michael Dilks — Dilks For Sheriff 2028</title>
+  <meta name="description" content="A U.S. Army veteran and 23-year servant of Indian River County. Read Michael Dilks' statement on accountability, transparency, and ending favoritism."/>
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Dilks For Sheriff 2028">
+  <meta property="og:title" content="About Michael Dilks — Dilks For Sheriff 2028">
+  <meta property="og:description" content="A U.S. Army veteran and 23-year servant of Indian River County. Read Michael Dilks' statement on accountability, transparency, and ending favoritism.">
+  <meta property="og:image" content="https://dilksforsheriff.com/images/dilks.jpg">
+  <meta property="og:url" content="https://dilksforsheriff.com/about.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    :root{
+      --blk:#080808;
+      --blk2:#0f0f0f;
+      --blk3:#141414;
+      --blk4:#1a1a1a;
+      --gold:#F4C300;
+      --gold2:#d4a800;
+      --gold3:#fff8dc;
+      --pink:#FF6EB4;
+      --pink2:#ff8ec6;
+      --wht:#ffffff;
+      --muted:#888;
+      --border:#222;
+      --border2:#2a2a2a;
+    }
+    html{scroll-behavior:smooth;}
+    body{
+      font-family:'Public Sans',sans-serif;
+      background:var(--blk);
+      color:var(--wht);
+      -webkit-font-smoothing:antialiased;
+      overflow-x:hidden;
+      position:relative;
+    }
+    body::before{
+      content:'';
+      position:fixed;inset:0;
+      pointer-events:none;
+      z-index:9999;
+      opacity:.035;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+    img{max-width:100%;display:block;}
+    a{text-decoration:none;}
+
+    .flagline{display:flex;height:3px;width:56px;overflow:hidden;}
+    .flagline i{flex:1;}
+    .flagline i:nth-child(1){background:var(--gold);}
+    .flagline i:nth-child(2){background:var(--pink);}
+    .flagline i:nth-child(3){background:var(--gold);}
+
+    /* ── ANNOUNCEMENT BAR ── */
+    .topbar{
+      background:var(--gold);color:var(--blk);text-align:center;
+      padding:9px 1rem;font-size:11px;font-weight:800;
+      letter-spacing:.22em;text-transform:uppercase;
+      display:flex;align-items:center;justify-content:center;gap:12px;position:relative;
+    }
+    .topbar::after{content:'';position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--pink);}
+    .topbar i{font-size:14px;}
+
+    /* ── NAV ── */
+    nav{
+      background:rgba(6,6,6,0.97);backdrop-filter:blur(12px);
+      border-bottom:3px solid var(--gold);padding:0 3rem;
+      display:flex;align-items:center;justify-content:space-between;
+      height:84px;position:sticky;top:0;z-index:200;
+    }
+    .nav-logo{
+      font-family:'Oswald',sans-serif;font-size:24px;font-weight:700;
+      letter-spacing:.1em;text-transform:uppercase;color:var(--gold);
+      display:flex;align-items:center;gap:14px;
+    }
+    .nav-logo-img{height:54px;width:auto;filter:drop-shadow(0 2px 6px rgba(0,0,0,.5));flex-shrink:0;}
+    .nav-logo span{color:var(--wht);font-weight:300;}
+    .nav-links{display:flex;align-items:center;gap:2.25rem;}
+    .nav-links a{
+      color:#aaa;font-size:12px;font-weight:600;letter-spacing:.18em;
+      text-transform:uppercase;transition:color .2s;position:relative;padding-bottom:4px;
+    }
+    .nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--gold);transition:width .25s;}
+    .nav-links a:hover,.nav-links a.active{color:var(--wht);}
+    .nav-links a:hover::after,.nav-links a.active::after{width:100%;}
+    .nav-donate{
+      background:var(--gold) !important;color:var(--blk) !important;padding:12px 26px;
+      font-weight:800 !important;font-size:12px !important;letter-spacing:.18em !important;transition:all .2s !important;
+    }
+    .nav-donate::after{display:none !important;}
+    .nav-donate:hover{background:var(--gold2) !important;transform:translateY(-1px);}
+
+    /* ── BUTTONS ── */
+    .btn-gold{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:var(--blk);padding:16px 32px;font-weight:800;font-size:12px;letter-spacing:.18em;text-transform:uppercase;transition:all .2s;}
+    .btn-gold:hover{background:var(--gold2);transform:translateY(-2px);}
+    .btn-outline{display:inline-flex;align-items:center;gap:10px;background:transparent;color:var(--wht);border:2px solid var(--border2);padding:14px 32px;font-weight:700;font-size:12px;letter-spacing:.18em;text-transform:uppercase;transition:all .2s;}
+    .btn-outline:hover{border-color:var(--gold);color:var(--gold);}
+    .btn-pink{display:inline-flex;align-items:center;gap:10px;background:var(--pink);color:var(--wht);padding:16px 32px;font-weight:800;font-size:12px;letter-spacing:.18em;text-transform:uppercase;transition:all .2s;}
+    .btn-pink:hover{opacity:.88;transform:translateY(-2px);}
+    .btn-black{display:inline-flex;align-items:center;gap:12px;background:var(--blk);color:var(--wht);padding:18px 36px;font-weight:800;font-size:12px;letter-spacing:.2em;text-transform:uppercase;transition:all .2s;white-space:nowrap;flex-shrink:0;}
+    .btn-black:hover{background:#1a1a1a;transform:translateY(-2px);}
+
+    /* ── HERO ── */
+    .hero{min-height:720px;background:var(--blk);display:grid;grid-template-columns:1.15fr 1fr;align-items:stretch;position:relative;overflow:hidden;}
+    .hero-left{padding:100px 64px 100px 80px;display:flex;flex-direction:column;justify-content:center;position:relative;background:radial-gradient(circle at 15% 20%,rgba(244,195,0,0.07) 0%,transparent 45%),linear-gradient(135deg,#0a0a0a 0%,#0f0f0a 100%);}
+    .hero-left::before{content:'';position:absolute;left:0;top:0;bottom:0;width:6px;background:linear-gradient(180deg,var(--gold) 0%,var(--pink) 100%);}
+    .hero-left::after{content:'DILKS';position:absolute;right:-20px;bottom:-40px;font-family:'Oswald',sans-serif;font-size:280px;font-weight:700;color:rgba(244,195,0,0.04);line-height:1;pointer-events:none;letter-spacing:-.02em;}
+    .eyebrow{font-size:11px;font-weight:700;letter-spacing:.36em;text-transform:uppercase;color:var(--pink);margin-bottom:1.5rem;display:flex;align-items:center;gap:12px;position:relative;z-index:1;}
+    .eyebrow::before{content:'★';color:var(--gold);font-size:14px;}
+    .hero-title{font-family:'Oswald',sans-serif;font-size:104px;font-weight:700;line-height:.86;text-transform:uppercase;color:var(--wht);letter-spacing:-.01em;position:relative;z-index:1;}
+    .hero-title .name{display:block;}
+    .hero-title .for{color:var(--gold);font-weight:300;display:block;font-size:64px;letter-spacing:.04em;margin-top:.1em;}
+    .hero-sub{font-size:17px;color:#b8b8b8;margin:2rem 0 2.75rem;line-height:1.8;max-width:540px;position:relative;z-index:1;}
+    .hero-sub strong{color:var(--wht);font-weight:600;}
+    .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;position:relative;z-index:1;}
+    .hero-right{position:relative;overflow:hidden;min-height:720px;}
+    .hero-photo{position:absolute;inset:0;background:url('images/dilks.jpg') center top/cover no-repeat;filter:grayscale(12%) contrast(1.05);}
+    .hero-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,var(--blk) 0%,transparent 32%),linear-gradient(180deg,transparent 50%,rgba(8,8,8,0.92) 100%);}
+    .hero-photo-tag{position:absolute;bottom:40px;right:40px;z-index:2;text-align:right;}
+    .hero-photo-tag .pname{font-family:'Oswald',sans-serif;font-size:22px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--wht);text-shadow:0 2px 20px rgba(0,0,0,0.85);}
+    .hero-photo-tag .prole{font-size:11px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);margin-top:5px;}
+    .hero-right::before{content:'';position:absolute;top:32px;right:32px;width:56px;height:56px;border-top:4px solid var(--gold);border-right:4px solid var(--gold);z-index:3;}
+    .hero-right-inner-br{position:absolute;bottom:32px;left:32px;width:56px;height:56px;border-bottom:4px solid var(--pink);border-left:4px solid var(--pink);z-index:3;}
+
+    /* ── INTERIOR PAGE HEADER ── */
+    .page-hero{position:relative;padding:96px 3rem 72px;text-align:center;border-bottom:3px solid var(--gold);background:radial-gradient(circle at 50% 0%,rgba(244,195,0,0.08) 0%,transparent 55%),linear-gradient(135deg,#0a0a0a 0%,#0f0f0a 100%);overflow:hidden;}
+    .page-hero::after{content:'';position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--pink);}
+    .page-hero .eyebrow{justify-content:center;}
+    .page-hero h1{font-family:'Oswald',sans-serif;font-size:74px;font-weight:700;text-transform:uppercase;line-height:.9;letter-spacing:-.01em;}
+    .page-hero h1 em{color:var(--gold);font-style:normal;font-weight:300;}
+    .page-hero p.lead{max-width:640px;margin:1.5rem auto 0;color:#b6b6b6;font-size:16px;line-height:1.8;}
+
+    /* ── STATS ── */
+    .stats{background:var(--blk2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);display:grid;grid-template-columns:repeat(4,1fr);}
+    .stat{padding:2.5rem 1.5rem;text-align:center;border-right:1px solid var(--border);transition:background .25s;cursor:default;}
+    .stat:last-child{border-right:none;}
+    .stat:hover{background:var(--blk3);}
+    .stat-num{font-family:'Oswald',sans-serif;font-size:56px;font-weight:600;color:var(--gold);line-height:1;letter-spacing:.02em;}
+    .stat-num.alt{color:var(--pink);}
+    .stat-label{font-size:10.5px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:#5e5e5e;margin-top:.65rem;}
+
+    /* ── SHARED SECTION HEADING ── */
+    .sec-eyebrow{font-size:11px;font-weight:700;letter-spacing:.4em;text-transform:uppercase;color:var(--pink);display:flex;align-items:center;gap:12px;margin-bottom:.8rem;}
+    .sec-eyebrow::before{content:'';width:28px;height:2px;background:var(--pink);}
+    .sec-title{font-family:'Oswald',sans-serif;font-size:56px;font-weight:600;text-transform:uppercase;color:var(--wht);line-height:1;margin-bottom:3rem;}
+    .sec-title em{color:var(--gold);font-style:normal;font-weight:300;}
+    .section{padding:96px 3rem;}
+
+    /* ── ISSUES ── */
+    .issues{background:var(--blk3);}
+    .issues-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5px;background:var(--border);}
+    .icard{background:var(--blk);padding:2.25rem 1.75rem;border-top:4px solid var(--gold);transition:all .25s;position:relative;}
+    .icard:nth-child(2){border-top-color:var(--pink);}
+    .icard:nth-child(3){border-top-color:var(--gold);}
+    .icard:nth-child(4){border-top-color:var(--pink);}
+    .icard:hover{background:var(--blk2);transform:translateY(-4px);z-index:2;box-shadow:0 20px 40px rgba(0,0,0,0.4);}
+    .icard-icon{width:56px;height:56px;background:var(--blk3);border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;transition:all .25s;}
+    .icard:hover .icard-icon{border-color:var(--gold);background:rgba(244,195,0,0.08);}
+    .icard:nth-child(2):hover .icard-icon,.icard:nth-child(4):hover .icard-icon{border-color:var(--pink);background:rgba(255,110,180,0.08);}
+    .icard-icon i{font-size:28px;color:var(--gold);}
+    .icard:nth-child(2) .icard-icon i,.icard:nth-child(4) .icard-icon i{color:var(--pink);}
+    .icard h3{font-family:'Oswald',sans-serif;font-size:21px;font-weight:600;text-transform:uppercase;letter-spacing:.03em;color:var(--wht);margin-bottom:.75rem;line-height:1.1;}
+    .icard p{font-size:14px;color:var(--muted);line-height:1.8;}
+
+    /* ── ABOUT ── */
+    .about{background:var(--blk);display:grid;grid-template-columns:1fr 1.2fr;gap:0;align-items:stretch;padding:0;}
+    .about-photo-col{position:relative;overflow:hidden;min-height:680px;}
+    .about-photo-img{position:absolute;inset:0;background:url('images/dilks.jpg') center top/cover no-repeat;filter:grayscale(18%) contrast(1.03);}
+    .about-photo-img::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent 58%,var(--blk) 100%);}
+    .about-gold-line{position:absolute;top:0;left:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--gold),var(--pink));z-index:2;}
+    .about-content{padding:96px 72px 96px 64px;background:var(--blk);display:flex;flex-direction:column;justify-content:center;}
+    .about-tag{font-size:11px;letter-spacing:.36em;text-transform:uppercase;color:var(--pink);font-weight:700;margin-bottom:.9rem;}
+    .about-title{font-family:'Oswald',sans-serif;font-size:52px;font-weight:600;text-transform:uppercase;line-height:1;margin-bottom:.5rem;}
+    .about-title em{color:var(--gold);font-style:normal;font-weight:300;}
+    .about-div{margin:1.75rem 0;}
+    .about-body{font-size:15px;color:#b6b6b6;line-height:1.9;margin-bottom:1.25rem;}
+    .about-sign{font-family:'Oswald',sans-serif;font-size:20px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--gold);margin:1.5rem 0 .4rem;}
+    .about-disc{font-size:11px;color:#5e5e5e;line-height:1.6;font-style:italic;letter-spacing:.02em;margin-bottom:.5rem;}
+    .about-creds{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:2.25rem 0 2.5rem;}
+    .cred{background:var(--blk3);border:1px solid var(--border);border-top:3px solid var(--gold);padding:1.5rem 1.25rem;transition:all .25s;position:relative;}
+    .cred:nth-child(2){border-top-color:var(--pink);}
+    .cred:nth-child(3){border-top-color:var(--gold);}
+    .cred:hover{transform:translateY(-3px);background:var(--blk4);box-shadow:0 14px 30px rgba(0,0,0,.35);}
+    .cred-ico{font-size:24px;color:var(--gold);margin-bottom:.85rem;display:block;}
+    .cred:nth-child(2) .cred-ico{color:var(--pink);}
+    .cred:nth-child(3) .cred-ico{color:var(--gold);}
+    .cred-num{font-family:'Oswald',sans-serif;font-size:34px;font-weight:700;color:var(--wht);line-height:.95;letter-spacing:.01em;}
+    .cred-label{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#777;margin-top:.5rem;line-height:1.4;}
+
+    /* ── PULL QUOTE ── */
+    .quote-section{background:var(--blk2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:80px 3rem;text-align:center;position:relative;overflow:hidden;}
+    .quote-section::before{content:'';position:absolute;left:0;top:0;bottom:0;width:6px;background:linear-gradient(180deg,var(--gold),var(--pink));}
+    .quote-section::after{content:'';position:absolute;right:0;top:0;bottom:0;width:6px;background:var(--pink);}
+    .quote-mark{font-family:'Playfair Display',serif;font-size:120px;color:var(--gold);opacity:.18;line-height:.5;margin-bottom:1.5rem;}
+    .quote-text{font-family:'Oswald',sans-serif;font-size:42px;font-weight:500;color:var(--wht);max-width:980px;margin:0 auto;line-height:1.3;text-transform:uppercase;letter-spacing:.01em;}
+    .quote-text em{color:var(--gold);font-style:normal;font-weight:300;}
+    .quote-attr{margin-top:2rem;font-size:12px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--pink);}
+
+    /* ── GET INVOLVED ── */
+    .involve{background:var(--blk3);}
+    .inv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+    .ibox{background:var(--blk);border:1px solid var(--border);padding:2.75rem 2.25rem;transition:all .25s;position:relative;overflow:hidden;}
+    .ibox::after{content:'';position:absolute;top:0;left:0;right:0;height:0;background:var(--gold);transition:height .3s;}
+    .ibox:nth-child(2)::after{background:var(--pink);}
+    .ibox:nth-child(3)::after{background:var(--gold);}
+    .ibox:hover::after{height:4px;}
+    .ibox:hover{border-color:var(--border2);box-shadow:0 20px 40px rgba(0,0,0,0.3);transform:translateY(-3px);}
+    .ibox-num{font-family:'Oswald',sans-serif;font-size:72px;font-weight:200;color:var(--pink);line-height:1;margin-bottom:1rem;letter-spacing:-.02em;}
+    .ibox:nth-child(1) .ibox-num{color:var(--gold);}
+    .ibox:nth-child(3) .ibox-num{color:var(--gold);}
+    .ibox-title{font-family:'Oswald',sans-serif;font-size:26px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.85rem;color:var(--wht);}
+    .ibox-text{font-size:14px;color:var(--muted);margin-bottom:2rem;line-height:1.8;}
+
+    /* ── FORM ── */
+    .form-wrap{margin-top:3rem;background:var(--blk3);border:1px solid var(--border);border-top:3px solid var(--pink);padding:2.5rem 2rem;}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+    .form-field{display:flex;flex-direction:column;gap:.5rem;}
+    .form-field.full{grid-column:1/-1;}
+    .form-field label{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#777;}
+    .form-field input,.form-field select,.form-field textarea{background:var(--blk);border:1px solid var(--border2);color:var(--wht);padding:14px 16px;font-size:14px;font-family:'Public Sans',sans-serif;outline:none;transition:border .2s;}
+    .form-field select{appearance:none;cursor:pointer;}
+    .form-field textarea{resize:vertical;}
+    .form-field input:focus,.form-field select:focus,.form-field textarea:focus{border-color:var(--gold);}
+
+    /* ── DONATE ── */
+    .donate-wrap{max-width:780px;margin:0 auto;}
+    .donate-intro{text-align:center;color:#b6b6b6;font-size:16px;line-height:1.8;margin-bottom:2.5rem;}
+    .amt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:1.25rem;}
+    .amt{background:var(--blk3);border:2px solid var(--border2);padding:1.5rem 1rem;text-align:center;cursor:pointer;transition:all .2s;font-family:'Oswald',sans-serif;}
+    .amt .a-num{font-size:32px;font-weight:700;color:var(--wht);line-height:1;}
+    .amt .a-lab{display:block;font-family:'Public Sans',sans-serif;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#777;margin-top:.5rem;}
+    .amt:hover{border-color:var(--gold);transform:translateY(-2px);}
+    .amt.sel{border-color:var(--gold);background:rgba(244,195,0,0.08);}
+    .amt.sel .a-num{color:var(--gold);}
+    .donate-cta{margin-top:.5rem;text-align:center;}
+    .donate-cta .btn-gold{width:100%;justify-content:center;padding:18px;font-size:13px;}
+    .embed-box{margin-top:2.5rem;border:2px dashed var(--border2);background:var(--blk2);padding:2.5rem 2rem;text-align:center;color:#888;}
+    .embed-box i{font-size:34px;color:var(--gold);display:block;margin-bottom:1rem;}
+    .embed-box h4{font-family:'Oswald',sans-serif;font-size:18px;font-weight:600;text-transform:uppercase;color:var(--wht);letter-spacing:.05em;margin-bottom:.6rem;}
+    .embed-box p{font-size:13px;line-height:1.7;max-width:520px;margin:0 auto;}
+    .secure-row{display:flex;align-items:center;justify-content:center;gap:1.75rem;flex-wrap:wrap;margin:2.25rem 0;}
+    .secure-row span{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#888;}
+    .secure-row i{font-size:18px;color:var(--gold);}
+    .legal-box{margin-top:2.5rem;background:var(--blk3);border:1px solid var(--border);border-left:4px solid var(--pink);padding:1.75rem 1.75rem;}
+    .legal-box h4{font-family:'Oswald',sans-serif;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+    .legal-box ul{list-style:none;display:flex;flex-direction:column;gap:.7rem;}
+    .legal-box li{font-size:12.5px;color:#9a9a9a;line-height:1.6;padding-left:1.4rem;position:relative;}
+    .legal-box li::before{content:'★';position:absolute;left:0;color:var(--pink);font-size:10px;top:2px;}
+
+    /* ── GOLD CTA STRIP ── */
+    .cta-strip{background:var(--gold);padding:64px 3rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;position:relative;}
+    .cta-strip::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--pink);}
+    .cta-strip-left h3{font-family:'Oswald',sans-serif;font-size:44px;font-weight:600;text-transform:uppercase;color:var(--blk);line-height:1;}
+    .cta-strip-left p{font-size:16px;color:rgba(0,0,0,0.65);margin-top:.75rem;max-width:600px;line-height:1.6;}
+
+    /* ── FOOTER ── */
+    footer{background:#040404;border-top:3px solid var(--gold);padding:64px 3rem 32px;}
+    .f-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem;}
+    .f-logo-row{display:flex;align-items:center;gap:14px;margin-bottom:1.1rem;}
+    .f-logo-img{height:58px;width:auto;}
+    .f-brand{font-family:'Oswald',sans-serif;font-size:24px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);}
+    .f-brand span{color:var(--wht);font-weight:300;}
+    .f-tagline{font-size:14px;color:#777;line-height:1.7;max-width:360px;}
+    .f-social{display:flex;gap:10px;margin-top:1.5rem;}
+    .f-social a{width:42px;height:42px;background:var(--blk3);border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;color:#999;transition:all .2s;}
+    .f-social a:hover{color:var(--gold);border-color:var(--gold);transform:translateY(-2px);}
+    .f-social i{font-size:19px;}
+    .f-col h4{font-family:'Oswald',sans-serif;font-size:13px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1.25rem;}
+    .f-col ul{list-style:none;}
+    .f-col li{margin-bottom:.75rem;}
+    .f-col a{color:#777;font-size:13px;transition:color .2s;}
+    .f-col a:hover{color:var(--wht);}
+    .f-bottom{border-top:1px solid var(--border);padding-top:2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+    .f-copy{color:#555;font-size:11.5px;}
+    .f-disc{color:#666;font-size:11px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;}
+
+    /* ── MOBILE NAV ── */
+    .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
+    .nav-hamburger span{display:block;width:26px;height:2px;background:var(--gold);transition:all .3s;}
+    .nav-mobile-menu{display:none;position:fixed;top:84px;left:0;right:0;background:#060606;border-bottom:2px solid var(--gold);z-index:199;padding:1.5rem 1.5rem 2rem;}
+    .nav-mobile-menu.open{display:block;}
+    .nav-mobile-menu a{display:block;color:#ccc;font-size:14px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;padding:.85rem 0;border-bottom:1px solid var(--border);transition:color .2s;}
+    .nav-mobile-menu a:last-child{margin-top:1rem;border:none;background:var(--gold);color:var(--blk);padding:1rem 1.5rem;text-align:center;font-weight:800;}
+    .nav-mobile-menu a:hover{color:var(--gold);}
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+    .anim{opacity:0;animation:fadeUp .7s cubic-bezier(.2,.7,.2,1) forwards;}
+    .d1{animation-delay:.05s;}.d2{animation-delay:.18s;}.d3{animation-delay:.31s;}.d4{animation-delay:.44s;}
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1);}
+    .reveal.in{opacity:1;transform:none;}
+    @media(prefers-reduced-motion:reduce){.anim,.reveal{opacity:1!important;transform:none!important;animation:none!important;}}
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:1024px){
+      .hero{grid-template-columns:1fr;}
+      .hero-right{min-height:480px;order:-1;}
+      .hero-left{padding:64px 2rem 64px 2rem;}
+      .hero-left::after{font-size:160px;right:0;bottom:-20px;}
+      .hero-title{font-size:76px;}.hero-title .for{font-size:48px;}
+      .about{grid-template-columns:1fr;}
+      .about-photo-col{min-height:440px;order:-1;}
+      .about-content{padding:56px 2rem;}
+      .f-grid{grid-template-columns:1fr 1fr;gap:2rem;}
+      nav{padding:0 1.5rem;}
+      .nav-links a:not(.nav-donate){display:none;}
+      .nav-hamburger{display:flex;}
+      .section{padding:72px 2rem;}
+      .issues-grid{grid-template-columns:repeat(2,1fr);}
+      .inv-grid{grid-template-columns:1fr;}
+      .cta-strip{padding:48px 2rem;flex-direction:column;text-align:center;}
+      .cta-strip-left p{max-width:100%;}
+      .stats{grid-template-columns:repeat(2,1fr);}
+      .stat:nth-child(2){border-right:none;}
+      .stat:nth-child(1),.stat:nth-child(2){border-bottom:1px solid var(--border);}
+      .quote-text{font-size:28px;}
+      .page-hero h1{font-size:52px;}
+      footer{padding:48px 2rem 24px;}
+    }
+    @media(max-width:600px){
+      .hero-title{font-size:54px;}.hero-title .for{font-size:38px;}
+      .hero-left{padding:52px 1.5rem;}
+      .hero-right{min-height:380px;}
+      .hero-sub{font-size:15px;}
+      .nav-logo{font-size:18px;}.nav-logo-img{height:44px;}
+      .topbar{font-size:9.5px;letter-spacing:.15em;}
+      .sec-title{font-size:36px;}
+      .about-title{font-size:34px;}
+      .page-hero h1{font-size:40px;}
+      .issues-grid{grid-template-columns:1fr;}
+      .stats{grid-template-columns:1fr 1fr;}
+      .stat-num{font-size:40px;}
+      .cta-strip-left h3{font-size:30px;}
+      .quote-text{font-size:22px;}
+      .quote-section{padding:56px 1.5rem;}
+      .section{padding:56px 1.5rem;}
+      .f-grid{grid-template-columns:1fr;}
+      .hero-right::before{top:16px;right:16px;width:36px;height:36px;}
+      .hero-right-inner-br{bottom:16px;left:16px;width:36px;height:36px;}
+      .about-creds{grid-template-columns:1fr;}
+      .f-brand{font-size:18px;}.f-logo-img{height:48px;}
+      .btn-gold,.btn-pink,.btn-outline{padding:14px 24px;font-size:11px;}
+      .inv-grid{gap:1rem;}
+      .form-grid{grid-template-columns:1fr;}
+      .amt-grid{grid-template-columns:1fr 1fr;}
+    }
+  </style></head>
+<body>
+  <!-- ANNOUNCEMENT BAR -->
+  <div class="topbar">
+    <i class="ti ti-star-filled"></i>
+    Dilks For Sheriff · 2028 · Indian River County
+    <i class="ti ti-star-filled"></i>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="index.html">
+      <img class="nav-logo-img" src="images/logo.png" alt="Dilks For Sheriff logo">
+      Dilks <span>For Sheriff</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" data-nav="index.html">Home</a>
+      <a href="about.html" data-nav="about.html">About Michael</a>
+      <a href="index.html#why">Why I'm Running</a>
+      <a href="index.html#contact">Get In Touch</a>
+      <a href="donate.html" class="nav-donate">Donate</a>
+    </div>
+    <div class="nav-hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+  <div class="nav-mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Michael</a>
+    <a href="index.html#why">Why I'm Running</a>
+    <a href="index.html#contact">Get In Touch</a>
+    <a href="donate.html">Donate →</a>
+  </div>
+  <!-- PAGE HEADER -->
+  <section class="page-hero">
+    <p class="eyebrow anim d1">Accountability Starts Here</p>
+    <h1 class="anim d2">No Spin. <em>No Favorites.</em></h1>
+    <p class="lead anim d3">A U.S. Army veteran and 23-year servant of Indian River County, running for Sheriff in 2028.</p>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about-photo-col">
+      <div class="about-gold-line"></div>
+      <div class="about-photo-img"></div>
+    </div>
+    <div class="about-content">
+      <p class="about-tag reveal">A Statement from Michael Dilks</p>
+      <h2 class="about-title reveal">Time to <em>Step Up.</em></h2>
+      <div class="about-div reveal"><span class="flagline"><i></i><i></i><i></i></span></div>
+      <p class="about-body reveal">As a United States Army veteran and someone who spent 23 years serving this county, backing people up, and telling it straight, now it's time to step up again for this community.</p>
+      <p class="about-body reveal">I'm running for Indian River County Sheriff.</p>
+      <p class="about-body reveal">Accountability and transparency matter. Facebook comments will be turned back on because the community deserves a voice — even when it's not flattering.</p>
+      <p class="about-body reveal">The days of silence, favoritism, and hiding from the public are over.</p>
+
+      <div class="about-creds reveal">
+        <div class="cred">
+          <i class="ti ti-shield-star cred-ico"></i>
+          <div class="cred-num">23</div>
+          <div class="cred-label">Years Serving<br>the County</div>
+        </div>
+        <div class="cred">
+          <i class="ti ti-medal cred-ico"></i>
+          <div class="cred-num">U.S. Army</div>
+          <div class="cred-label">Veteran</div>
+        </div>
+        <div class="cred">
+          <i class="ti ti-users cred-ico"></i>
+          <div class="cred-num">1</div>
+          <div class="cred-label">Community.<br>Ours.</div>
+        </div>
+      </div>
+
+      <p class="about-sign reveal">Michael Dilks</p>
+      <p class="about-disc reveal">Paid for and approved by Michael Dilks, Republican, for Indian River County Sheriff.</p>
+      <div style="margin-top:1.5rem;display:flex;gap:14px;flex-wrap:wrap;" class="reveal">
+        <a href="donate.html" class="btn-gold">Support the Campaign <i class="ti ti-arrow-right"></i></a>
+        <a href="index.html#contact" class="btn-outline">Get In Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PULL QUOTE -->
+  <section class="quote-section">
+    <div class="quote-mark reveal">"</div>
+    <p class="quote-text reveal">The days of silence, favoritism, and hiding from the public are <em>over.</em></p>
+    <p class="quote-attr reveal">— Michael Dilks</p>
+  </section>
+
+  <!-- CTA STRIP -->
+  <section class="cta-strip">
+    <div class="cta-strip-left">
+      <h3>Ready to back real accountability?</h3>
+      <p>Every contribution helps carry this message across Indian River County. Chip in today.</p>
+    </div>
+    <a href="donate.html" class="btn-black">Donate Now <i class="ti ti-arrow-right"></i></a>
+  </section>
+  <!-- FOOTER -->
+  <footer>
+    <div class="f-grid">
+      <div class="f-col">
+        <div class="f-logo-row">
+          <img class="f-logo-img" src="images/logo.png" alt="Dilks For Sheriff logo">
+          <div class="f-brand">Dilks <span>For Sheriff</span></div>
+        </div>
+        <p class="f-tagline">U.S. Army veteran and 23-year servant of Indian River County. Running for Sheriff in 2028 to bring back accountability, transparency, and an end to favoritism.</p>
+        <div class="f-social">
+          <a href="https://www.facebook.com/michael.dilks/" target="_blank" rel="noopener" aria-label="Facebook"><i class="ti ti-brand-facebook"></i></a>
+          <a href="https://www.instagram.com/dilksforsheriff/" target="_blank" rel="noopener" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
+        </div>
+      </div>
+      <div class="f-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Michael</a></li>
+          <li><a href="index.html#why">Why I'm Running</a></li>
+          <li><a href="donate.html">Donate</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>Get Involved</h4>
+        <ul>
+          <li><a href="index.html#contact">Volunteer</a></li>
+          <li><a href="donate.html">Donate</a></li>
+          <li><a href="index.html#contact">Request a Yard Sign</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:dilksforsheriff@gmail.com">dilksforsheriff@gmail.com</a></li>
+          <li><a href="#">dilksforsheriff.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <p class="f-copy">© 2026 Dilks for Sheriff. All Rights Reserved.</p>
+      <p class="f-disc">Paid for and approved by Michael Dilks, Republican, for Indian River County Sheriff.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll-reveal
+    (function(){
+      var els=document.querySelectorAll('.reveal');
+      if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in');});return;}
+      var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+      els.forEach(function(e){io.observe(e);});
+    })();
+    // Active nav highlight
+    (function(){
+      var path=location.pathname.split('/').pop()||'index.html';
+      document.querySelectorAll('[data-nav]').forEach(function(a){if(a.getAttribute('data-nav')===path)a.classList.add('active');});
+    })();
+  </script>
+
+</body>
+</html>
