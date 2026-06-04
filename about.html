@@ -279,7 +279,7 @@
     /* ── MOBILE NAV ── */
     .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
     .nav-hamburger span{display:block;width:26px;height:2px;background:var(--gold);transition:all .3s;}
-    .nav-mobile-menu{display:none;position:fixed;top:84px;left:0;right:0;background:#060606;border-bottom:2px solid var(--gold);z-index:199;padding:1.5rem 1.5rem 2rem;}
+    .nav-mobile-menu{display:none;position:absolute;top:100%;left:0;right:0;background:#060606;border-bottom:2px solid var(--gold);box-shadow:0 16px 30px rgba(0,0,0,.18);z-index:201;padding:1.25rem 1.5rem 1.75rem;}
     .nav-mobile-menu.open{display:block;}
     .nav-mobile-menu a{display:block;color:#ccc;font-size:14px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;padding:.85rem 0;border-bottom:1px solid var(--border);transition:color .2s;}
     .nav-mobile-menu a:last-child{margin-top:1rem;border:none;background:var(--gold);color:var(--blk);padding:1rem 1.5rem;text-align:center;font-weight:800;}
@@ -330,7 +330,8 @@
       .hero-right{min-height:380px;}
       .hero-sub{font-size:15px;}
       .nav-logo{font-size:18px;}.nav-logo-img{height:44px;}
-      .topbar{font-size:9.5px;letter-spacing:.15em;}
+      .topbar{font-size:9.5px;letter-spacing:.12em;line-height:1.5;}
+      .hero-left::after{font-size:108px;bottom:-10px;}
       .sec-title{font-size:36px;}
       .about-title{font-size:34px;}
       .page-hero h1{font-size:40px;}
@@ -426,14 +427,14 @@
     <div class="nav-hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
       <span></span><span></span><span></span>
     </div>
+    <div class="nav-mobile-menu" id="mobileMenu">
+      <a href="index.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Home</a>
+      <a href="about.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">About Michael</a>
+      <a href="index.html#why" onclick="document.getElementById('mobileMenu').classList.remove('open')">Why I'm Running</a>
+      <a href="index.html#contact" onclick="document.getElementById('mobileMenu').classList.remove('open')">Get In Touch</a>
+      <a href="donate.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Donate →</a>
+    </div>
   </nav>
-  <div class="nav-mobile-menu" id="mobileMenu">
-    <a href="index.html">Home</a>
-    <a href="about.html">About Michael</a>
-    <a href="index.html#why">Why I'm Running</a>
-    <a href="index.html#contact">Get In Touch</a>
-    <a href="donate.html">Donate →</a>
-  </div>
   <!-- PAGE HEADER -->
   <section class="page-hero">
     <p class="eyebrow anim d1">Accountability Starts Here</p>
