@@ -91,8 +91,11 @@
     .nav-links a:hover,.nav-links a.active{color:var(--wht);}
     .nav-links a:hover::after,.nav-links a.active::after{width:100%;}
     .nav-donate{
-      background:var(--gold) !important;color:var(--blk) !important;padding:12px 26px;
-      font-weight:800 !important;font-size:12px !important;letter-spacing:.18em !important;transition:all .2s !important;
+      background:var(--gold) !important;color:var(--blk) !important;
+      padding:12px 26px;display:inline-block;
+      font-weight:800 !important;font-size:12px !important;letter-spacing:.18em !important;
+      text-indent:.18em;text-align:center;line-height:1;
+      transition:all .2s !important;
     }
     .nav-donate::after{display:none !important;}
     .nav-donate:hover{background:var(--gold2) !important;transform:translateY(-1px);}
@@ -335,7 +338,9 @@
       .hero-right{min-height:380px;}
       .hero-sub{font-size:15px;}
       .nav-logo{font-size:18px;}.nav-logo-img{height:44px;}
-      .topbar{font-size:9.5px;letter-spacing:.12em;line-height:1.5;}
+      .topbar{font-size:9px;letter-spacing:.1em;line-height:1.5;}
+      .topbar-loc{display:none!important;}
+      .hero-photo-tag{display:none!important;}
       .hero-left::after{font-size:108px;bottom:-10px;}
       .sec-title{font-size:36px;}
       .about-title{font-size:34px;}
@@ -419,7 +424,7 @@
   <!-- ANNOUNCEMENT BAR -->
   <div class="topbar">
     <i class="ti ti-star-filled"></i>
-    Dilks For Sheriff · 2028 · Indian River County
+    Dilks For Sheriff · 2028
     <i class="ti ti-star-filled"></i>
   </div>
 
