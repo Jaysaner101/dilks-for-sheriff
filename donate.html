@@ -510,15 +510,15 @@
         <!-- STEP 1: AMOUNT -->
         <div class="donate-step"><span class="step-num">1</span>Choose Your Amount</div>
         <div class="amt-grid reveal">
-          <div class="amt"     data-amt="25"   data-url="PASTE_STRIPE_LINK_25_HERE"><span class="a-num">$25</span><span class="a-lab">Supporter</span></div>
-          <div class="amt sel" data-amt="50"   data-url="PASTE_STRIPE_LINK_50_HERE"><span class="a-num">$50</span><span class="a-lab">Friend</span></div>
-          <div class="amt"     data-amt="100"  data-url="PASTE_STRIPE_LINK_100_HERE"><span class="a-num">$100</span><span class="a-lab">Advocate</span></div>
-          <div class="amt"     data-amt="250"  data-url="PASTE_STRIPE_LINK_250_HERE"><span class="a-num">$250</span><span class="a-lab">Champion</span></div>
-          <div class="amt"     data-amt="500"  data-url="PASTE_STRIPE_LINK_500_HERE"><span class="a-num">$500</span><span class="a-lab">Leader</span></div>
-          <div class="amt"     data-amt="1000" data-url="PASTE_STRIPE_LINK_1000_HERE"><span class="a-num">$1,000</span><span class="a-lab">Max / Election</span></div>
+          <div class="amt sel" data-amt="25"   data-url="https://buy.stripe.com/5kQ4gr9knfCK8xw2NygUM01"><span class="a-num">$25</span><span class="a-lab">Supporter</span></div>
+          <div class="amt"     data-amt="50"   data-url="https://buy.stripe.com/bJe5kv68b3U26po5ZKgUM00"><span class="a-num">$50</span><span class="a-lab">Friend</span></div>
+          <div class="amt"     data-amt="100"  data-url="https://buy.stripe.com/9B6dR1gMP4Y63dcdscgUM02"><span class="a-num">$100</span><span class="a-lab">Advocate</span></div>
+          <div class="amt"     data-amt="250"  data-url="https://buy.stripe.com/cNi28jcwz8ai9BAdscgUM03"><span class="a-num">$250</span><span class="a-lab">Champion</span></div>
+          <div class="amt"     data-amt="500"  data-url="https://buy.stripe.com/eVqcMXdADaiq1541JugUM04"><span class="a-num">$500</span><span class="a-lab">Leader</span></div>
+          <div class="amt"     data-amt="1000" data-url="https://buy.stripe.com/7sY4gr1RVcqyaFE2NygUM05"><span class="a-num">$1,000</span><span class="a-lab">Max / Election</span></div>
         </div>
         <div class="amt-grid reveal" style="grid-template-columns:1fr;margin-top:0;">
-          <div class="amt" data-amt="other" data-url="PASTE_STRIPE_LINK_CUSTOM_HERE" style="padding:1.1rem;">
+          <div class="amt" data-amt="other" data-url="https://buy.stripe.com/cNieV5fIL2PYcNMewggUM06" style="padding:1.1rem;">
             <span class="a-num" style="font-size:22px;">Other Amount</span>
             <span class="a-lab">Choose your own contribution</span>
           </div>
@@ -533,7 +533,7 @@
         </p>
 
         <form id="donorForm"
-              action="https://formspree.io/f/PASTE_DONATION_FORMSPREE_ID_HERE"
+              action="https://api.web3forms.com/submit"
               method="POST"
               class="form-wrap reveal"
               style="margin-top:0;">
@@ -588,13 +588,15 @@
           </div>
 
           <!-- Hidden fields populated by JS -->
-          <input type="hidden" name="donation_amount" id="hiddenAmt" value="$50">
-          <input type="hidden" name="_subject" id="formSubject" value="Confirmed Donation — $50">
+          <input type="hidden" name="access_key" value="497934b0-156b-4714-aaf8-024c863c825d">
+          <input type="hidden" name="from_name" value="Dilks For Sheriff Donations">
+          <input type="hidden" name="donation_amount" id="hiddenAmt" value="$25">
+          <input type="hidden" name="subject" id="formSubject" value="Confirmed Donation — $25">
 
           <div style="margin-top:1.5rem;">
             <button type="submit" id="donateBtn" class="btn-gold" disabled
                     style="width:100%;justify-content:center;padding:18px;font-size:14px;border:none;cursor:pointer;font-family:'Public Sans',sans-serif;">
-              Proceed to Secure Checkout — $50 <i class="ti ti-lock"></i>
+              Proceed to Secure Checkout — $25 <i class="ti ti-lock"></i>
             </button>
             <p id="donateMsg"></p>
             <p class="donate-legal-note">
@@ -642,7 +644,7 @@
           var formEl = document.getElementById('donorForm');
           var action = formEl ? formEl.getAttribute('action') : '';
           // Only fire Formspree if the ID has been configured
-          if(action && action.indexOf('PASTE_DONATION') === -1){
+          if(action && action.indexOf('web3forms.com') > -1){
             fetch(action,{
               method:'POST',
               body: JSON.stringify(data),
@@ -671,8 +673,8 @@
     var hidAmt= document.getElementById('hiddenAmt');
     var form  = document.getElementById('donorForm');
     var msg   = document.getElementById('donateMsg');
-    var currentUrl = '';
-    var currentAmt = '$50';
+    var currentUrl = 'https://buy.stripe.com/5kQ4gr9knfCK8xw2NygUM01';
+    var currentAmt = '$25';
 
     tiles.forEach(function(t){
       t.addEventListener('click',function(){
@@ -718,7 +720,7 @@
         var data = {};
         fd.forEach(function(v,k){ if(k.indexOf('_next')===-1) data[k]=v; });
         data['donation_amount'] = currentAmt;
-        data['_subject'] = 'Confirmed Donation — ' + currentAmt;
+        data['subject'] = 'Confirmed Donation — ' + currentAmt;
 
         // Store in sessionStorage — retrieved after Stripe success redirect
         sessionStorage.setItem('pendingDonor', JSON.stringify(data));
