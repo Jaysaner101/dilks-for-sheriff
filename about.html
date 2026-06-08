@@ -174,9 +174,29 @@
     .icard p{font-size:14px;color:var(--muted);line-height:1.8;}
 
     /* ── ABOUT ── */
-    .about{background:var(--blk);display:grid;grid-template-columns:1fr 1.2fr;gap:0;align-items:start;padding:0;}
-    .about-photo-col{position:relative;overflow:hidden;min-height:540px;align-self:start;}
-    .about-photo-img{position:absolute;inset:0;background:url('images/dilks-about.jpg') center/contain no-repeat;filter:contrast(1.03) saturate(1.05);}
+    .about{background:var(--blk);display:grid;grid-template-columns:minmax(260px,380px) 1fr;gap:3.5rem;align-items:center;max-width:1140px;margin:0 auto;padding:4.5rem 2rem;}
+    .about-photo-col{position:relative;width:100%;aspect-ratio:702/900;border:3px solid var(--pink);box-shadow:0 22px 48px rgba(20,35,63,.22);overflow:hidden;align-self:center;}
+    .about-photo-img{position:absolute;inset:0;background:url('images/dilks-about.jpg') center/cover no-repeat;filter:contrast(1.03) saturate(1.05);}
+    /* About detail — centered visual section */
+    .about-detail{max-width:1000px;margin:0 auto;padding:.5rem 2rem 4.5rem;text-align:center;}
+    .about-detail-intro{max-width:680px;margin:1.25rem auto 2.75rem;color:var(--muted);line-height:1.85;font-size:17px;}
+    .journey{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-bottom:2.75rem;}
+    .journey-card{background:var(--blk2);border:1px solid var(--border);border-top:3px solid var(--gold);padding:1.6rem 1.4rem;text-align:left;}
+    .journey-card:nth-child(even){border-top-color:var(--pink);}
+    .journey-card i{font-size:28px;color:var(--gold);display:block;margin-bottom:.75rem;}
+    .journey-card:nth-child(even) i{color:var(--pink);}
+    .journey-card h4{font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.4px;color:var(--wht);font-size:17px;margin-bottom:.4rem;line-height:1.15;}
+    .journey-card p{color:var(--muted);font-size:13.5px;line-height:1.5;margin:0;}
+    .award-box{display:flex;align-items:center;gap:1.5rem;max-width:700px;margin:0 auto 2.5rem;background:var(--pink);padding:1.75rem 2rem;text-align:left;box-shadow:0 16px 40px rgba(20,35,63,.22);}
+    .award-box>i{font-size:46px;color:#fff;flex-shrink:0;}
+    .award-box h4{font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.5px;font-size:20px;color:#fff;margin-bottom:.4rem;line-height:1.15;}
+    .award-box p{color:rgba(255,255,255,.85);font-size:14.5px;line-height:1.6;margin:0;}
+    @media(max-width:860px){
+      .about{grid-template-columns:1fr;gap:2rem;padding:3rem 1.3rem;}
+      .about-photo-col{max-width:320px;margin:0 auto;}
+      .journey{grid-template-columns:1fr;}
+      .award-box{flex-direction:column;text-align:center;gap:1rem;}
+    }
     .stands{max-width:880px;margin:0 auto;padding:0 2rem;}
     .stand-block{padding:2rem 0;border-top:1px solid var(--border);}
     .stand-block:first-of-type{border-top:none;}
@@ -185,9 +205,9 @@
     .stand-block p{color:var(--muted);line-height:1.8;font-size:16px;margin-bottom:1rem;}
     .stand-block p:last-child{margin-bottom:0;}
     @media(max-width:640px){.stand-block h3{font-size:20px;}.stands{padding:0 1.3rem;}}
-    .about-photo-img::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent 58%,var(--blk) 100%);}
+    .about-photo-img::after{content:none;}
     .about-gold-line{position:absolute;top:0;left:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--gold),var(--pink));z-index:2;}
-    .about-content{padding:96px 72px 96px 64px;background:var(--blk);display:flex;flex-direction:column;justify-content:center;}
+    .about-content{padding:0;background:transparent;display:flex;flex-direction:column;justify-content:center;}
     .about-tag{font-size:11px;letter-spacing:.36em;text-transform:uppercase;color:var(--pink);font-weight:700;margin-bottom:.9rem;}
     .about-title{font-family:'Oswald',sans-serif;font-size:52px;font-weight:600;text-transform:uppercase;line-height:1;margin-bottom:.5rem;}
     .about-title em{color:var(--gold);font-style:normal;font-weight:300;}
@@ -319,7 +339,7 @@
       .hero-title{font-size:76px;}.hero-title .for{font-size:48px;}
       .about{grid-template-columns:1fr;}
       .about-photo-col{min-height:380px;order:-1;}
-      .about-content{padding:56px 2rem;}
+      .about-content{padding:0;}
       .f-grid{grid-template-columns:1fr 1fr;gap:2rem;}
       nav{padding:0 1.5rem;gap:.75rem;}
       .nav-logo-text{display:none;}
@@ -472,21 +492,17 @@
     <p class="lead anim d3">A U.S. Army veteran with 26 years of service — 23 of them protecting Indian River County — now running for Sheriff in 2028.</p>
   </section>
 
-  <!-- ABOUT / BIO -->
+  <!-- ABOUT INTRO: framed photo + intro -->
   <section class="about" id="about">
     <div class="about-photo-col">
-      <div class="about-gold-line"></div>
       <div class="about-photo-img"></div>
     </div>
     <div class="about-content">
       <p class="about-tag reveal">About Michael Dilks</p>
       <h2 class="about-title reveal">A Lifetime of <em>Service.</em></h2>
       <div class="about-div reveal"><span class="flagline"><i></i><i></i><i></i></span></div>
-      <p class="about-body reveal">Michael Dilks is a devoted husband, father of four, and proud grandfather to one granddaughter. He and his wife — a fellow law enforcement officer — have dedicated their lives to serving their community and keeping families safe.</p>
-      <p class="about-body reveal">Michael moved to Vero Beach in 1993 and has called Indian River County home ever since. After high school, he answered the call to serve his country in the U.S. Army. From 1996 to 1999 he served with Alpha Company, 1st Battalion, 509th Parachute Infantry Regiment, proudly carrying on the unit's legendary &ldquo;Geronimo!&rdquo; tradition.</p>
-      <p class="about-body reveal">Following his military service, Michael began a law enforcement career spanning more than 23 years. During that time he served in patrol, undercover narcotics, street crimes investigations, major crimes investigations, SWAT, as a Field Training Deputy, on the DEA Narcotics Task Force, and on the U.S. Marshals Fugitive Task Force.</p>
-      <p class="about-body reveal">He has earned numerous awards and commendations for his service, including multiple life-saving awards and recognition as the 2018 Victim's Advocate Officer of the Year.</p>
-
+      <p class="about-body reveal">Michael Dilks is a devoted husband, father of four, and proud grandfather to one granddaughter. He and his wife &mdash; a fellow law enforcement officer &mdash; have dedicated their lives to serving their community and keeping families safe.</p>
+      <p class="about-body reveal">Michael moved to Vero Beach in 1993 and has called Indian River County home ever since. After high school, he answered the call to serve his country in the U.S. Army, serving with the 509th Parachute Infantry Regiment from 1996 to 1999 &mdash; proudly carrying on the unit's legendary &ldquo;Geronimo!&rdquo; tradition.</p>
       <div class="about-creds reveal">
         <div class="cred">
           <i class="ti ti-shield-star cred-ico"></i>
@@ -504,14 +520,38 @@
           <div class="cred-label">In Indian<br>River County</div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <p class="about-sign reveal">Michael Dilks</p>
-      <p class="about-disc reveal">Paid for and approved by Michael Dilks, Republican, for Indian River County Sheriff.</p>
-      <div style="margin-top:1.5rem;display:flex;gap:14px;flex-wrap:wrap;" class="reveal">
-        <a href="donate.html" class="btn-gold">Support the Campaign <i class="ti ti-arrow-right"></i></a>
-        <a href="index.html#contact" class="btn-outline">Get In Touch</a>
+  <!-- ABOUT DETAIL: centered, visual -->
+  <section class="about-detail">
+    <p class="sec-eyebrow reveal" style="text-align:center;">Career &amp; Service</p>
+    <h2 class="sec-title reveal" style="text-align:center;">23 Years <em>On the Job.</em></h2>
+    <p class="about-detail-intro reveal">Following his military service, Michael built a law-enforcement career spanning more than two decades &mdash; moving through nearly every demanding role the profession has to offer.</p>
+
+    <div class="journey reveal">
+      <div class="journey-card"><i class="ti ti-parachute"></i><h4>U.S. Army</h4><p>509th Parachute Infantry Regiment &middot; 1996&ndash;1999</p></div>
+      <div class="journey-card"><i class="ti ti-car"></i><h4>Patrol</h4><p>Frontline community policing on the road</p></div>
+      <div class="journey-card"><i class="ti ti-search"></i><h4>Narcotics &amp; Major Crimes</h4><p>Undercover narcotics, street crimes &amp; major investigations</p></div>
+      <div class="journey-card"><i class="ti ti-shield-bolt"></i><h4>SWAT &amp; Training</h4><p>Tactical operations &amp; Field Training Deputy</p></div>
+      <div class="journey-card"><i class="ti ti-badge"></i><h4>DEA Task Force</h4><p>Federal narcotics enforcement</p></div>
+      <div class="journey-card"><i class="ti ti-star"></i><h4>U.S. Marshals</h4><p>Fugitive Task Force</p></div>
+    </div>
+
+    <div class="award-box reveal">
+      <i class="ti ti-award"></i>
+      <div>
+        <h4>2018 Victim's Advocate Officer of the Year</h4>
+        <p>One of numerous awards and commendations earned across his career &mdash; including multiple life-saving awards.</p>
       </div>
     </div>
+
+    <p class="about-sign reveal" style="text-align:center;">Michael Dilks</p>
+    <div class="reveal" style="margin-top:1.25rem;display:flex;gap:14px;flex-wrap:wrap;justify-content:center;">
+      <a href="donate.html" class="btn-gold">Support the Campaign <i class="ti ti-arrow-right"></i></a>
+      <a href="index.html#contact" class="btn-outline">Get In Touch</a>
+    </div>
+    <p class="about-disc reveal" style="text-align:center;margin-top:2rem;">Paid for and approved by Michael Dilks, Republican, for Indian River County Sheriff.</p>
   </section>
 
   <!-- WHERE MICHAEL STANDS -->

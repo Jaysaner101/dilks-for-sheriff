@@ -174,9 +174,29 @@
     .icard p{font-size:14px;color:var(--muted);line-height:1.8;}
 
     /* ── ABOUT ── */
-    .about{background:var(--blk);display:grid;grid-template-columns:1fr 1.2fr;gap:0;align-items:start;padding:0;}
-    .about-photo-col{position:relative;overflow:hidden;min-height:540px;align-self:start;}
-    .about-photo-img{position:absolute;inset:0;background:url('images/dilks-about.jpg') center/contain no-repeat;filter:contrast(1.03) saturate(1.05);}
+    .about{background:var(--blk);display:grid;grid-template-columns:minmax(260px,380px) 1fr;gap:3.5rem;align-items:center;max-width:1140px;margin:0 auto;padding:4.5rem 2rem;}
+    .about-photo-col{position:relative;width:100%;aspect-ratio:702/900;border:3px solid var(--pink);box-shadow:0 22px 48px rgba(20,35,63,.22);overflow:hidden;align-self:center;}
+    .about-photo-img{position:absolute;inset:0;background:url('images/dilks-about.jpg') center/cover no-repeat;filter:contrast(1.03) saturate(1.05);}
+    /* About detail — centered visual section */
+    .about-detail{max-width:1000px;margin:0 auto;padding:.5rem 2rem 4.5rem;text-align:center;}
+    .about-detail-intro{max-width:680px;margin:1.25rem auto 2.75rem;color:var(--muted);line-height:1.85;font-size:17px;}
+    .journey{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-bottom:2.75rem;}
+    .journey-card{background:var(--blk2);border:1px solid var(--border);border-top:3px solid var(--gold);padding:1.6rem 1.4rem;text-align:left;}
+    .journey-card:nth-child(even){border-top-color:var(--pink);}
+    .journey-card i{font-size:28px;color:var(--gold);display:block;margin-bottom:.75rem;}
+    .journey-card:nth-child(even) i{color:var(--pink);}
+    .journey-card h4{font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.4px;color:var(--wht);font-size:17px;margin-bottom:.4rem;line-height:1.15;}
+    .journey-card p{color:var(--muted);font-size:13.5px;line-height:1.5;margin:0;}
+    .award-box{display:flex;align-items:center;gap:1.5rem;max-width:700px;margin:0 auto 2.5rem;background:var(--pink);padding:1.75rem 2rem;text-align:left;box-shadow:0 16px 40px rgba(20,35,63,.22);}
+    .award-box>i{font-size:46px;color:#fff;flex-shrink:0;}
+    .award-box h4{font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.5px;font-size:20px;color:#fff;margin-bottom:.4rem;line-height:1.15;}
+    .award-box p{color:rgba(255,255,255,.85);font-size:14.5px;line-height:1.6;margin:0;}
+    @media(max-width:860px){
+      .about{grid-template-columns:1fr;gap:2rem;padding:3rem 1.3rem;}
+      .about-photo-col{max-width:320px;margin:0 auto;}
+      .journey{grid-template-columns:1fr;}
+      .award-box{flex-direction:column;text-align:center;gap:1rem;}
+    }
     .stands{max-width:880px;margin:0 auto;padding:0 2rem;}
     .stand-block{padding:2rem 0;border-top:1px solid var(--border);}
     .stand-block:first-of-type{border-top:none;}
@@ -185,9 +205,9 @@
     .stand-block p{color:var(--muted);line-height:1.8;font-size:16px;margin-bottom:1rem;}
     .stand-block p:last-child{margin-bottom:0;}
     @media(max-width:640px){.stand-block h3{font-size:20px;}.stands{padding:0 1.3rem;}}
-    .about-photo-img::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent 58%,var(--blk) 100%);}
+    .about-photo-img::after{content:none;}
     .about-gold-line{position:absolute;top:0;left:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--gold),var(--pink));z-index:2;}
-    .about-content{padding:96px 72px 96px 64px;background:var(--blk);display:flex;flex-direction:column;justify-content:center;}
+    .about-content{padding:0;background:transparent;display:flex;flex-direction:column;justify-content:center;}
     .about-tag{font-size:11px;letter-spacing:.36em;text-transform:uppercase;color:var(--pink);font-weight:700;margin-bottom:.9rem;}
     .about-title{font-family:'Oswald',sans-serif;font-size:52px;font-weight:600;text-transform:uppercase;line-height:1;margin-bottom:.5rem;}
     .about-title em{color:var(--gold);font-style:normal;font-weight:300;}
@@ -319,7 +339,7 @@
       .hero-title{font-size:76px;}.hero-title .for{font-size:48px;}
       .about{grid-template-columns:1fr;}
       .about-photo-col{min-height:380px;order:-1;}
-      .about-content{padding:56px 2rem;}
+      .about-content{padding:0;}
       .f-grid{grid-template-columns:1fr 1fr;gap:2rem;}
       nav{padding:0 1.5rem;gap:.75rem;}
       .nav-logo-text{display:none;}
