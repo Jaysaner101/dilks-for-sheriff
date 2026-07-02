@@ -252,11 +252,11 @@
 
     /* ── FORM ── */
     .form-wrap{margin-top:3rem;background:var(--blk3);border:1px solid var(--border);border-top:3px solid var(--pink);padding:2.5rem 2rem;}
-    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
-    .form-field{display:flex;flex-direction:column;gap:.5rem;}
+    .form-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1rem;}
+    .form-field{display:flex;flex-direction:column;gap:.5rem;min-width:0;}
     .form-field.full{grid-column:1/-1;}
     .form-field label{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#777;}
-    .form-field input,.form-field select,.form-field textarea{background:var(--blk);border:1px solid var(--border2);color:var(--wht);padding:14px 16px;font-size:14px;font-family:'Public Sans',sans-serif;outline:none;transition:border .2s;}
+    .form-field input,.form-field select,.form-field textarea{background:var(--blk);border:1px solid var(--border2);color:var(--wht);padding:14px 16px;font-size:14px;font-family:'Public Sans',sans-serif;outline:none;transition:border .2s;width:100%;min-width:0;}
     .form-field select{appearance:none;cursor:pointer;}
     .form-field textarea{resize:vertical;}
     .form-field input:focus,.form-field select:focus,.form-field textarea:focus{border-color:var(--gold);}
@@ -264,7 +264,7 @@
     /* ── DONATE ── */
     .donate-wrap{max-width:780px;margin:0 auto;}
     .donate-intro{text-align:center;color:#b6b6b6;font-size:16px;line-height:1.8;margin-bottom:2.5rem;}
-    .amt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:1.25rem;}
+    .amt-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-bottom:1.25rem;}
     .amt{background:var(--blk3);border:2px solid var(--border2);padding:1.5rem 1rem;text-align:center;cursor:pointer;transition:all .2s;font-family:'Oswald',sans-serif;}
     .amt .a-num{font-size:32px;font-weight:700;color:var(--wht);line-height:1;}
     .amt .a-lab{display:block;font-family:'Public Sans',sans-serif;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#777;margin-top:.5rem;}
@@ -390,8 +390,10 @@
       .f-brand{font-size:18px;}.f-logo-img{height:48px;}
       .btn-gold,.btn-pink,.btn-outline{padding:14px 24px;font-size:11px;}
       .inv-grid{gap:1rem;}
-      .form-grid{grid-template-columns:1fr;}
-      .amt-grid{grid-template-columns:1fr 1fr;}
+      .form-grid{grid-template-columns:minmax(0,1fr);}
+      .amt-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);}
+      /* 16px inputs so iOS Safari doesn't zoom the page on field focus */
+      .form-field input,.form-field select,.form-field textarea{font-size:16px;padding:13px 14px;}
       /* eyebrow: tighter so "2028 · INDIAN RIVER COUNTY · FLORIDA" fits one clean line */
       .eyebrow{font-size:9.5px;letter-spacing:.13em;gap:7px;margin-bottom:1.1rem;}
       .eyebrow::before{font-size:11px;}
@@ -514,7 +516,7 @@
     .donate-step{display:flex;align-items:center;gap:.85rem;font-family:'Oswald',sans-serif;font-size:13px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--pink);margin:2.75rem 0 1.25rem;}
     .donate-step:first-child{margin-top:0;}
     .step-num{width:30px;height:30px;border-radius:50%;background:var(--gold);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;flex-shrink:0;}
-    .donor-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+    .donor-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1rem;}
     .donor-grid .form-field.full{grid-column:1/-1;}
     .cert-row{grid-column:1/-1;display:flex;align-items:flex-start;gap:.85rem;font-size:13px;color:var(--muted);line-height:1.6;padding:1.1rem 1.25rem;background:var(--blk4);border:1px solid var(--border);}
     .cert-row input[type=checkbox]{width:18px;height:18px;flex-shrink:0;margin-top:1px;accent-color:var(--gold);cursor:pointer;}
@@ -529,7 +531,37 @@
     .success-card h2 em{color:var(--gold);font-style:normal;font-weight:300;}
     .success-card p{font-size:16px;color:var(--muted);max-width:520px;margin:0 auto 2rem;line-height:1.8;}
     .success-card .disc{font-size:11px;color:var(--muted);margin-top:2rem;font-style:italic;}
-    @media(max-width:600px){.donor-grid{grid-template-columns:1fr;}}
+    /* Mobile polish: tap targets, sizing, tight spacing */
+    .form-field input,.form-field select,.form-field textarea{display:block;max-width:100%;min-height:52px;line-height:1.35;border-radius:0;}
+    .cert-row input[type=checkbox]{width:24px;height:24px;min-width:24px;min-height:24px;margin-top:.15rem;}
+    .cert-row label{flex:1;min-width:0;cursor:pointer;}
+    #donateBtn{min-height:58px;white-space:normal;line-height:1.35;gap:.5rem;}
+    .amt{min-width:0;min-height:84px;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+    @media(max-width:600px){
+      #donateSection.section{padding:56px 1rem;}
+      .donor-grid{grid-template-columns:minmax(0,1fr);gap:.9rem;}
+      .form-wrap{padding:1.25rem .95rem;margin-top:0;}
+      .form-field label{font-size:10px;letter-spacing:.16em;line-height:1.35;}
+      .donate-step{font-size:11px;letter-spacing:.12em;gap:.65rem;align-items:flex-start;line-height:1.3;margin:2.1rem 0 1rem;}
+      .donate-step:first-child{margin-top:0;}
+      .step-num{width:28px;height:28px;font-size:12px;}
+      .amt-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem;margin-bottom:.75rem;}
+      .amt{padding:1rem .65rem;min-height:78px;}
+      .amt .a-num{font-size:26px;}
+      .amt .a-lab{font-size:9px;letter-spacing:.12em;line-height:1.35;}
+      .cert-row{padding:1rem .85rem;gap:.75rem;font-size:12.5px;line-height:1.55;align-items:flex-start;}
+      .cert-row input[type=checkbox]{width:26px;height:26px;min-width:26px;min-height:26px;}
+      #donateBtn{font-size:12px!important;padding:16px 12px!important;min-height:58px;letter-spacing:.12em;}
+      .donate-legal-note{font-size:12px;line-height:1.65;}
+      .secure-row{gap:1rem;margin:1.75rem 0;}
+      .secure-row span{font-size:10px;letter-spacing:.12em;}
+    }
+    @media(max-width:380px){
+      #donateSection.section{padding-left:.75rem;padding-right:.75rem;}
+      .form-wrap{padding:1rem .75rem;}
+      .amt-grid{gap:.6rem;}
+      .amt .a-num{font-size:24px;}
+    }
   </style>
 
   <section class="section" style="background:var(--blk);" id="donateSection">
@@ -542,7 +574,7 @@
 
       <!-- SUCCESS CARD (shown after Stripe confirms payment) -->
       <div class="success-card" id="successCard">
-        <i class="ti ti-circle-check success-card s-icon" style="display:block;"></i>
+        <i class="ti ti-circle-check s-icon" style="display:block;"></i>
         <h2>Thank You for <em>Donating.</em></h2>
         <p>Your contribution to the Dilks For Sheriff campaign has been received. Your information has been recorded as required by Florida campaign finance law. You should receive a receipt from Stripe shortly.</p>
         <a href="index.html" class="btn-gold" style="display:inline-flex;margin:0 auto;">Back to Home <i class="ti ti-arrow-right"></i></a>
@@ -586,41 +618,41 @@
           <div class="donor-grid">
             <div class="form-field full">
               <label>Full Legal Name *</label>
-              <input type="text" name="full_name" placeholder="First and Last Name" required>
+              <input type="text" name="full_name" placeholder="First and Last Name" autocomplete="name" required>
             </div>
             <div class="form-field full">
               <label>Email Address *</label>
-              <input type="email" name="email" placeholder="your@email.com" required>
+              <input type="email" name="email" placeholder="your@email.com" autocomplete="email" inputmode="email" required>
             </div>
             <div class="form-field full">
               <label>Mailing Address *</label>
-              <input type="text" name="address" placeholder="Street Address" required>
+              <input type="text" name="address" placeholder="Street Address" autocomplete="street-address" required>
             </div>
             <div class="form-field">
               <label>City *</label>
-              <input type="text" name="city" placeholder="City" required>
+              <input type="text" name="city" placeholder="City" autocomplete="address-level2" required>
             </div>
-            <div class="form-field" style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;">
+            <div class="form-field" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:.75rem;">
               <div class="form-field" style="margin:0;">
                 <label>State *</label>
-                <input type="text" name="state" placeholder="FL" maxlength="2" required>
+                <input type="text" name="state" placeholder="FL" maxlength="2" autocomplete="address-level1" autocapitalize="characters" required>
               </div>
               <div class="form-field" style="margin:0;">
                 <label>ZIP *</label>
-                <input type="text" name="zip" placeholder="32960" maxlength="10" required>
+                <input type="text" name="zip" placeholder="32960" maxlength="10" autocomplete="postal-code" inputmode="numeric" required>
               </div>
             </div>
             <div class="form-field">
               <label>Occupation *</label>
-              <input type="text" name="occupation" placeholder="e.g. Teacher, Retired" required>
+              <input type="text" name="occupation" placeholder="e.g. Teacher, Retired" autocomplete="organization-title" required>
             </div>
             <div class="form-field">
               <label>Employer *</label>
-              <input type="text" name="employer" placeholder="e.g. County Schools, Self-Employed" required>
+              <input type="text" name="employer" placeholder="e.g. County Schools, Self-Employed" autocomplete="organization" required>
             </div>
             <div class="form-field full">
               <label>Phone Number (Optional)</label>
-              <input type="tel" name="phone" placeholder="(772) 000-0000">
+              <input type="tel" name="phone" placeholder="(772) 000-0000" autocomplete="tel" inputmode="tel">
             </div>
             <div class="cert-row">
               <input type="checkbox" id="certCheck" name="certified" value="yes" required>
@@ -639,7 +671,7 @@
           <input type="hidden" name="subject" id="formSubject" value="Confirmed Donation — $25">
 
           <div style="margin-top:1.5rem;">
-            <button type="submit" id="donateBtn" class="btn-gold" disabled
+            <button type="submit" id="donateBtn" class="btn-gold"
                     style="width:100%;justify-content:center;padding:18px;font-size:14px;border:none;cursor:pointer;font-family:'Public Sans',sans-serif;">
               Proceed to Secure Checkout — $25 <i class="ti ti-lock"></i>
             </button>
@@ -735,20 +767,12 @@
       });
     });
 
-    // ── 3. ENABLE BUTTON ONLY WHEN FORM IS COMPLETE ──────────────────────────
-    function validate(){
-      if(!form) return;
-      var ok = true;
-      form.querySelectorAll('[required]').forEach(function(f){
-        if(f.type==='checkbox'){ if(!f.checked) ok=false; }
-        else { if(!f.value.trim()) ok=false; }
-      });
-      if(btn) btn.disabled = !ok;
-    }
-    if(form){
-      form.addEventListener('input',  validate);
-      form.addEventListener('change', validate);
-    }
+    // ── 3. FORM COMPLETENESS ─────────────────────────────────────────────────
+    // The button is always enabled. Native HTML5 constraint validation (the
+    // required attributes) blocks submission and highlights the exact missing
+    // field. The old JS disabled-button gate relied on input/change events,
+    // which mobile autofill (iOS contact fill, Samsung Pass, Google autofill)
+    // does not fire — leaving the button permanently disabled on phones.
 
     // ── 4. FORM SUBMIT: STORE DATA → NAVIGATE TO STRIPE ──────────────────────
     if(form){
@@ -767,8 +791,10 @@
         data['donation_amount'] = currentAmt;
         data['subject'] = 'Confirmed Donation — ' + currentAmt;
 
-        // Store in sessionStorage — retrieved after Stripe success redirect
-        sessionStorage.setItem('pendingDonor', JSON.stringify(data));
+        // Store in sessionStorage — retrieved after Stripe success redirect.
+        // Wrapped so a storage failure (e.g. private browsing) can never
+        // block the redirect to Stripe.
+        try{ sessionStorage.setItem('pendingDonor', JSON.stringify(data)); }catch(err){}
 
         // Navigate to Stripe (same tab so session is preserved)
         window.location.href = currentUrl;
